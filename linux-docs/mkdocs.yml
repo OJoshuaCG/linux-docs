@@ -1,1 +1,71 @@
-site_name: My Docs
+site_name: Linux Docs
+site_description: Documentacion de linux
+site_url: https://ojoshuacg.github.io/linux-docs/
+
+repo_url: https://github.com/OJoshuaCG/linux-docs
+edit_uri: edit/main/linux-docs/docs
+
+# Setting navigation titles and files
+nav:
+  - Inicio: index.md
+  - Arch Based Distros:
+      - Instalacion: arch_based_distros/index.md
+      - Configuracion: arch_based_distros/configuracion.md
+      - Troubleshooting: arch_based_distros/troubleshooting.md
+  - Debian: debian.md
+  - Rocky Linux: rocky_linux.md
+  - Linux:
+      - Shell: linux/shell.md
+      - Terminal: linux/terminal.md
+      - Qemu: linux/qemu.md
+
+# CSS file custom
+extra_css:
+  - stylesheets/custom.css
+
+# Setting colorscheme for custom theme
+theme:
+  # Setting theme, in this case: mkdocs-material
+  # https://squidfunk.github.io/mkdocs-material/
+  name: material
+  
+  # nav_style: dark
+  
+  palette:    
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+      primary: custom
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+      primary: custom
+  
+  # feature's code scopes
+  features:
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+
+# Disable search engine
+plugins: []
+
+# Some markdown utilities
+markdown_extensions:
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true

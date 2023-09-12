@@ -1,0 +1,36 @@
+Inicio
+Arch Distros
+    Troubleshooting
+    Configs
+Debian
+    Post Instalacion
+    Actualizar sistema
+    Instalar paquetes
+Rocky Linux
+Open Suse
+
+Linux
+    Shells
+    Terminal
+    Desktop Environments
+    Firewalls
+      CSF
+      Firewalld
+      IP Tables
+    Qemu
+
+Docker
+    Instalar en diferentes distros
+    Comandos
+
+Mysql
+    Instalar en diferentes distros
+    Crear usuarios
+    DML Data Manipulation Language  - Select, Insert, Update, Delete, Merge, Call, Explain Plan, Lock Table
+    DCL Data Control Language       - Grant Revoke
+    DDL Data Definition Lenguage    - Create, Alter, Drop, Truncate, Comment, Rename
+    TCL (?)
+
+Postgresql
+
+Apache
