@@ -12,7 +12,9 @@ nav:
       - Instalacion: arch_based_distros/index.md
       - Configuracion: arch_based_distros/configuracion.md
       - Troubleshooting: arch_based_distros/troubleshooting.md
-  - Debian: debian.md
+  - Debian:
+      - Post-Instalacion: debian/post-instalacion.md
+      - Servidor: debian/server.md
   - Rocky Linux: rocky_linux.md
   - Linux:
       - Shell: linux/shell.md
@@ -28,10 +30,10 @@ theme:
   # Setting theme, in this case: mkdocs-material
   # https://squidfunk.github.io/mkdocs-material/
   name: material
-  
+
   # nav_style: dark
-  
-  palette:    
+
+  palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -47,7 +49,7 @@ theme:
         icon: material/weather-sunny
         name: Light mode
       primary: custom
-  
+
   # feature's code scopes
   features:
     - content.code.copy

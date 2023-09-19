@@ -18,10 +18,21 @@ Linux
       Firewalld
       IP Tables
     Qemu
+    Tmux
+
+
+--->>> DEV
 
 Docker
     Instalar en diferentes distros
     Comandos
+
+Git
+
+Neovim (?)
+
+
+--- >>> BDD
 
 Mysql
     Instalar en diferentes distros
@@ -33,4 +44,15 @@ Mysql
 
 Postgresql
 
+--- >>> Backend
+
 Apache
+
+Nginx
+Caddy
+Mongoose
+
+Cpanel
+Vesta
+Ajenti
+Froxlor

@@ -1,5 +1,3 @@
-# Post-Instalacion
-
 ## Otorgar privilegios root a tu usuario
 
 Para poder instalar nuestros paquetes dentro de Debian ocupamos tener privilegios root, para ello, podemos entrar en el entorno `root` u otorgarle los privilegios a nuestros usuario de la siguiente forma
@@ -21,16 +19,22 @@ sudo apt update
 sudo apt upgrade -y
 ```
 
-Al finalizar, reiniciaremos nuestra maquina, para aplicar los cambios de nuestro usuario
-
-!!! note "Nota"
-    Si cerramos la terminal despues de darle privilegios `root` a nuestro usuario, se perderan, por lo que debemos iniciar de nuevo desde `su - <USER>`
-
+Si tenemos detalles con actualizar los paquetes, debemos eliminar las lineas en donde se incluyen los repositorios de `deb cdrom` dentro del archivo `/etc/apt/sources.list`
 
 ```bash
-sudo apt install -y neofetch
-sudo apt install -y synaptic
+sudo nano /etc/apt/sources.list
 ```
+
+Despues de esto, podemos intentar actualizar de nuevo nuestro sistema
+
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+
+Al finalizar, reiniciaremos nuestra maquina, para aplicar los cambios de nuestro usuario
+
+!!! warning "Advertencia"
+    Si cerramos la terminal despues de darle privilegios `root` a nuestro usuario, se perderan, por lo que debemos iniciar de nuevo desde el comienzo (`su - root`)
 
 ---
 
@@ -42,14 +46,26 @@ Para agregar mas enlaces a repositorios debemos crear un archivo `sources.list` 
 sudo nano /etc/apt/sources.list.d/sources.list
 ```
 
-Dentro agregaremos las siguientes lineas
+Dentro agregaremos las siguientes lineas donde:
+
+- bullseye: Debian 11
+- bookworm: Debian 12
 
 ```bash
-# Unofficial repositories https://wiki.debian.org/DebianRepository/Unofficial
+# Non-free software
+deb http://deb.debian.org/debian bullseye non-free non-free-firmware
+deb-src http://deb.debian.org/debian bullseye non-free non-free-firmware
 
+deb http://deb.debian.org/debian-security bullseye-security non-free non-free-firmware
+deb-src http://deb.debian.org/debian-security bullseye-security non-free non-free-firmware
+
+deb http://deb.debian.org/debian bullseye-updates non-free non-free-firmware
+deb-src http://deb.debian.org/debian bullseye-updates non-free non-free-firmware
+
+# Unofficial repositories https://wiki.debian.org/DebianRepository/Unofficial
 # Deb Multimedia
 # http://www.deb-multimedia.org/
-deb https://www.deb-multimedia.org stable main non-free
+deb https://www.deb-multimedia.org bullseye main non-free
 
 # Linux Software Repository for Microsoft Products
 # https://learn.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software
@@ -84,6 +100,21 @@ Con esto, ahora podemos instalar paquetes con ayuda de `mist` a traves del coman
 
 ---
 ## Paquetes
+
+```bash
+# Tools
+sudo apt install locate tar zip unzip p7zip git wget curl rsync neofetch -y
+# Developers packages
+sudo apt install build-essential gnupg -y
+# Network tools
+sudo apt install net-tools netcat lsof nmap -y
+# Package manager via GUI
+sudo apt install synaptic -y
+# Utilities
+sudo apt install thunderbird vlc filezilla -y
+
+```
+
 
 Usar `sudo apt install <package> <package> ...`
 
