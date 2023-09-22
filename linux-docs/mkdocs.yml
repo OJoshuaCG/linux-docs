@@ -12,15 +12,16 @@ nav:
       - Instalacion: arch_based_distros/index.md
       - Configuracion: arch_based_distros/configuracion.md
       - Troubleshooting: arch_based_distros/troubleshooting.md
-  - Debian:
-      - Post-Instalacion: debian/post-instalacion.md
-      - Servidor: debian/server.md
+  - Debian: debian/post-instalacion.md
   - Rocky Linux: rocky_linux.md
   - Linux:
+      - Usuarios: linux/usuarios.md
       - Shell: linux/shell.md
       - Terminal: linux/terminal.md
       - Qemu: linux/qemu.md
-
+  - SSH:
+      - Servidor: ssh/server.md
+      # - Cliente: ssh/client.md
 # CSS file custom
 extra_css:
   - stylesheets/custom.css
