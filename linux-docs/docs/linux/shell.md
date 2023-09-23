@@ -31,13 +31,13 @@ Para cambiar el tema de Oh My Bash, editar el archivo `~/.bashrc`, editar la sig
 OSH_THEME="powerline"
 
 # For
-OSH_THEME="rr" # or "axin", "cooperkid", "duru", "purity"
+OSH_THEME="rr" # or "axin", "bake", "cooperkid", "duru", "pure", "purity", "rana"
 ```
 
 Con esto ya tendremos configurado la shell para nuestro usuario y no el root, para ello entraremos en el entorno `root` y luego enlazar el archivo `.bashrc` de root al del usuario.
 ```bash
 sudo su
-ln -s -f /home/<Username>/.bashrc /root/.bashrc
+ln -s -f /home/<USER>/.bashrc /root/.bashrc
 
 # Si existe...
 rm /root/.bashrc
@@ -55,7 +55,7 @@ Instalar [sudo plugin](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/su
 sudo su
 cd /usr/share
 mkdir zsh-sudo
-chown <username>:<username> zsh-sudo/
+chown <USER>:<USER> zsh-sudo/
 exit
 cd /usr/share/zsh-sudo
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/sudo/sudo.plugin.zsh
@@ -138,7 +138,7 @@ sudo su
 chsh -s $(which zsh)
 exec zsh
 
-ln -s /home/<username>/.zshrc /root/.zshrc
+ln -s /home/<USER>/.zshrc /root/.zshrc
 
 # Si existe...
 rm /root/.zshrc

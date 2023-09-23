@@ -103,7 +103,7 @@ Con esto, ahora podemos instalar paquetes con ayuda de `mist` a traves del coman
 
 ```bash
 # Tools
-sudo apt install locate tar zip unzip p7zip git wget curl rsync neofetch -y
+sudo apt install locate tar zip unzip p7zip git wget curl rsync neofetch tmux -y
 # Developers packages
 sudo apt install build-essential gnupg -y
 # Network tools

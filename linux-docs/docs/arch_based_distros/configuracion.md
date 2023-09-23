@@ -1,15 +1,11 @@
-## Crear usuario
-
-
-
 ## Montar particiones automaticamente al iniciar sesion
 
-Si tenemos windows:
+Si tenemos **windows**:
 
 1. Desactivar la opcion `Activar inicio rapido` dentro del panel de control:
-2. **Panel de control\Todos los elementos de Panel de control\Opciones de energía\Configuración del sistema** seleccionamos `Cambiar la configuracion no disponible actualmente` y desactivar la opcion `Activar inicio rapido`, guardamos los cambios.
+2. `Panel de control\Todos los elementos de Panel de control\Opciones de energía\Configuración del sistema` seleccionamos `Cambiar la configuracion no disponible actualmente` y desactivar la opcion `Activar inicio rapido`, guardamos los cambios.
 
-En Linux,
+En **Linux**,
 
 1. Instalar el paquete `ntfs-3g` en nuestro sistema.
 2. Ejecutar el comando `lsblk -f` para mostrar las particiones y copiar el codigo **UUID**.
@@ -88,20 +84,34 @@ _Fuentes incluidas:_
 ---
 ## Habilitar camara externa
 
+En caso de tener detalles con la camara externa, debemos instalar el siguiente paquete:
+
 ```sh
 sudo pacman -S v4l2-ctl cameractrls
+```
 
+Una vez instalado, vamos a conectar la camara externa y visualizar los dispositivos conectados, tambien podemos obtener la configuracion de la camara
+
+```sh
 v4l2-ctl --list-devices
 v4l2-ctl -d /dev/video0 --list-ctrls
+v4l2-ctl -d /dev/video2 --list-ctrls
+```
 
-# Open cameractrls and search:  "Real Path" from "Capture"
-# Copy and do this:
+!!! info "Nota"
+    En nuestro caso, `/dev/video0` es nuestra camara principal, y `/dev/video2` es la camara externa, esto puede cambiar dependiendo los dispositivos que tengas conectado en tu computadora y como el sistema operativo los administre
+
+
+Una vez detectado la camara principal (`video0`) y la camara externa (`video2`), vamos a modificar ala configuracion de hardware para que considere la camara externa como la pricipal:
+
+```sh
 sudo mv /dev/video0 /dev/video0.original
 sudo mv /dev/video2 /dev/video0
+```
 
-# - Where /dev/video2 is "Real Path" from external camera
+Para revertir los cambios anteriores:
 
-# For revert actions:
+```sh
 sudo mv /dev/video0 /dev/video2
 sudo mv /dev/video0.original /dev/video0
 ```
@@ -113,19 +123,24 @@ sudo mv /dev/video0.original /dev/video0
 ```bash
 sudo pacman -S linux-firmware networkmanager wpa_supplicant netctl wireless_tools dialog dhcpcd broadcom-wl broadcom-wl-dkms iwlwifi
 
-
-# Verificar driver
+# Consultar hardware conectado en la computadora
 lspci | grep Wireless
 lspci -k
 
+# Consultar interfaces de red
 ip link
-ip link set <interface> up
 
-# Example
+# Activar interfaz de red ('down' para desactivar)
+ip link set <INTERFAZ> up
+
+# Ejemplo
 ip link set wlan0 up
 ip link set wlp2s0 up
 ip link set enp3s0 up
 
-rfkill
+# Ver estado del bluetooth y wifi
+rfkill -J
+
+# Activar wifi
 rfkill unblock wifi
 ```

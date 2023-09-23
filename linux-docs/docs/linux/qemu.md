@@ -57,6 +57,14 @@ virt-install \
 ```
 
 
+### Visualizar maquinas virtuales creadas
+
+```sh
+cd /var/lib/libvirt/images/
+virsh -c qemu:///system list --all
+```
+
+
 ### Controlar maquina virtual
 
 ```sh
