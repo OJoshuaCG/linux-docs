@@ -12,17 +12,27 @@ nav:
       - Instalacion: arch_based_distros/index.md
       - Configuracion: arch_based_distros/configuracion.md
       - Troubleshooting: arch_based_distros/troubleshooting.md
-  - Debian: debian/post-instalacion.md
-  - Rocky Linux: rocky-linux.md
-  - Open Suse: open-suse.md
+  - Debian: os/debian.md
+  - Rocky Linux: os/rocky-linux.md
+  - Open Suse: os/open-suse.md
   - Linux:
       - Usuarios: linux/usuarios.md
       - Shell: linux/shell.md
       - Terminal: linux/terminal.md
+      - Tmux: linux/tmux.md
       - Qemu: linux/qemu.md
+  # - Desktop Environments:
+  #     - xfce: desktop-environments/xfce.md
+  #     - kde: desktop-environments/kde.md
   - SSH:
       - Servidor: ssh/server.md
       # - Cliente: ssh/client.md
+  # - Firewall:
+  #     - ip-tables: firewall/ip-tables.md
+  #     - firewalld: firewall/firewalld.md
+  #     - ufw: firewall/ufw.md
+  #     - csf: firewall/csf.md
+  #     - fail2ban: firewall/fail2ban.md
 
 # CSS file custom
 extra_css:

@@ -1,5 +1,89 @@
+_Esta documentacion fue realizada en base a Rocky Linux 8.8_
+
 ##  Post Instalacion
 
+Una vez instalado Rocky Linux, procedemos a actualizar el sistema, instalamos las herramientas de desarrollo (opcional) y activamos repositorio de terceros 'Powertools'.
+
+```sh
+dnf -y update
+dnf -y install epel-release sudo
+
+dnf -y groupinstall "Development Tools"
+dnf -y install git
+
+dnf config-manager --set-enabled powertools
+```
+
+Si lo requerimos, podemos actualizar el dominio de nuestro host
+
+```sh
+hostnamectl
+hostnamectl set-hostname <DOMAIN>
+```
+
+Para conocer la hora y de ser necesario, cambiarla
+
+```sh
+timedatectl
+
+timedatectl list-timezones
+timedatectl list-timezones | grep America
+
+timedatectl set-timezone America/Mexico_City
+```
+
+
+---
+## Instalar paquetes
+
+```sh
+# Tools
+dnf install mlocate tar zip unzip p7zip git wget curl rsync neofetch tmux -y
+# Network tools
+dnf install net-tools netcat lsof nmap -y
+```
+
+
+---
+## Gestor de paquetes `dnf`
+
+Rocky Linux cuenta con su propio de gestor de paquetes llamado `dnf`, sin embargo, al estar basado en CentOS, es posible utilizar su gestor de paquetes `yum`.
+
+```sh
+dnf install <PACKAGE>
+dnf reinstall <PACKAGE>
+
+dnf update # (1)
+dnf upgrade # (2)
+dnf upgrade-minimal # (3)
+
+dnf list --installed
+dnf list --updates
+dnf list --upgrades
+dnf list --upgrades
+
+dnf repolist # (4)
+
+dnf search <PATTERN> # (5)
+
+dnf remove <PACKAGE>
+dnf autoremove <PACKAGE> # (6)
+
+dnf clean {metadata, packages, dbcache, expire-cache, all} # (7)
+```
+
+1.  Actualizar todos los paquetes
+2.  `upgrade` es un alias de `update`, por lo cual, realiza la misma accion que `update`
+3.  Actualiza solo los paquetes necesario que pueden afectar el sistema.
+4.  Mostrar repositorios permitidos
+5.  Buscar un paquete en los repositorios
+6.  Remover paquetes y dependencias
+7.  Eliminar cache del `dnf`
+
+
+
+
+<!--
 ### Añadir un usuario nuevo
 
 ```sh
@@ -111,4 +195,4 @@ csf -e
 - [Docs Rocky Linux - firewalld](https://docs.rockylinux.org/es/guides/security/firewalld-beginners/)
 - [DigitalOcean](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-rocky-linux-8)
 - [How to install cockpit](https://www.howtoforge.com/how-to-install-cockpit-on-rocky-linux-8/)
-- [Manage Rocky Linux using cockpit](https://computingforgeeks.com/manage-rocky-linux-using-cockpit-web-console/)
+- [Manage Rocky Linux using cockpit](https://computingforgeeks.com/manage-rocky-linux-using-cockpit-web-console/) -->

@@ -112,7 +112,6 @@ sudo apt install net-tools netcat lsof nmap -y
 sudo apt install synaptic -y
 # Utilities
 sudo apt install thunderbird vlc filezilla -y
-
 ```
 
 
