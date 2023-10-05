@@ -43,6 +43,30 @@ dnf install mlocate tar zip unzip p7zip git wget curl rsync neofetch tmux -y
 dnf install net-tools netcat lsof nmap -y
 ```
 
+### nodejs
+
+```sh
+dnf module list | grep nodejs
+dnf module enable nodejs:18
+dnf install nodejs npm
+```
+
+### python
+
+```sh
+dnf install python3.11
+echo alias python=\'python3.11\' >> .bashrc
+tail .bashrc
+```
+
+### php
+
+```sh
+dnf module list | grep php
+dnf module enable php:8.0
+dnf install php php-cli php-curl php-dba php-intl php-json php-mbstring php-zip php-pdo php-mysqlnd php-pgsql
+```
+
 
 ---
 ## Gestor de paquetes `dnf`

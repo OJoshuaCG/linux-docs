@@ -99,7 +99,7 @@ Con esto, ahora podemos instalar paquetes con ayuda de `mist` a traves del coman
 
 
 ---
-## Paquetes
+## Instalar paquetes
 
 ```bash
 # Tools
@@ -114,12 +114,125 @@ sudo apt install synaptic -y
 sudo apt install thunderbird vlc filezilla -y
 ```
 
+### nodejs
+
+Se agrega las llaves de Nodesource
+
+```sh
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+```
+
+Se crea el **repositorio deb**, _puede modificarse la version
+
+```sh
+NODE_MAJOR=18
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+```
+
+Instalamos nodejs, incluido npm
+
+```sh
+sudo apt-get update
+sudo apt-get install nodejs -y
+```
+
+### python
+
+Instalar dependencias para python
+
+```sh
+sudo apt install software-properties-common -y
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev -y
+```
+
+https://weblinus.com/instalar-python-3-11-1-en-debian-11-y-derivados/
+https://serverspace.io/es/support/help/debian-install-python/
+
+
+Descargar un paquete `.tgz` del [repositorio de python](https://www.python.org/ftp/python) y lo descomprimimos
+
+```sh
+wget https://www.python.org/ftp/python/3.11.6/Python-3.11.6.tgz
+tar -xvzf Python-*
+cd Python-*
+```
+
+Compilamos la carpeta e instalamos python
+
+```sh
+sudo ./configure --enable-optimizations
+make install
+```
+
+Establecemos nuestra version de python como la predeterminada
+
+```sh
+sudo update-alternatives --install /usr/bin/python python /usr/local/bin/python3.11 1
+python --version
+python3 --version
+```
+
+### php
+
+Descargamos dependencias
+
+```sh
+sudo apt-get install ca-certificates apt-transport-https software-properties-common -y
+```
+
+Agregamos repositorio Sury a APT y agregamos su clave GPG
+
+```sh
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | tee /etc/apt/sources.list.d/sury-php.list
+sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+# or, but deprecated
+# wget -qO - https://packages.sury.org/php/apt.gpg | apt-key add -
+```
+
+Actualizamos el gestor de paquete e instalamos
+
+```sh
+apt-get update -y
+apt-get install php8.2
+```
+
+Instalamos las extensiones para php
+
+```sh
+sudo apt install -y php8.2-{cli,common,curl,dba,http,intl,mbstring,mongodb,mysql,odbc,pgsql,xml,yaml,zip} -y
+```
+
+### Otros paquetes
+
 
 Usar `sudo apt install <package> <package> ...`
 
 | Nombre del programa | Nombre del paquete |
 | ------------------- | ------------------ |
 | Visual Studio Code  | apt install code   |
+
+
+---
+## Gestor de paquetes `apt`
+
+| Comando                       | Accion                                                               |
+| ----------------------------- | -------------------------------------------------------------------- |
+| `apt install <PACKAGE>`       | Instalar paquete                                                     |
+| `apt reinstall <PACKAGE>`     | Reinstalar paquete                                                   |
+| `apt update`                  | Actualiza lista de los paquetes disponibles                          |
+| `apt upgrade`                 | Actualiza el sistema instalando/actualizando los paquetes            |
+| `apt full-upgrade`            | Actualiza el sistema removiendo/instalando/actualizando los paquetes |
+| `apt remove <PACKAGE>`        | Desinstala/elimina un paquete                                        |
+| `apt autoremove`              | Desinstala/elimina paquetes no usados/innecesarios                   |
+| `apt search <PATTERN>`        | Busca el 'patron' en el nombre/descripcion de los paquetes           |
+| `apt show <PACKEGE>`          | Muestra los detalles deL paquete instalado                           |
+| `apt-cache search <PATTERN>`  | Busca el 'patron' en el nombre de los paquetes                       |
+| `apt-cache madison <PACKAGE>` | Obtener los detalles (version, repositorio) de un paquete            |
+| `apt-cache pkgnames`          | Ver paquetes instalados en el sistema                                |
+
 
 
 ## _Fuentes_

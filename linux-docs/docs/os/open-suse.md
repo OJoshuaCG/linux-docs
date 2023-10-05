@@ -64,6 +64,26 @@ zypper in findutils-locate tar zip unzip p7zip git wget curl nano rsync neofetch
 zypper in net-tools netcat lsof nmap
 ```
 
+### nodejs
+
+Para instalar nodejs debemos adjuntar la version `nodejsVERSION`, esto instalara `nodejs` y `npm`
+
+```sh
+zypper install nodejs18
+```
+
+### python
+
+```sh
+zypper install python311
+```
+
+### php
+
+```sh
+zypper install php8 php8-cli php8-curl php8-dba php8-intl php8-mbstring php8-zip php8-pdo php8-mysql php8-pgsql
+```
+
 
 ---
 ## Gestor de paquetes `zypper`
