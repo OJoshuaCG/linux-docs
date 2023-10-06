@@ -90,54 +90,20 @@ zypper install php8 php8-cli php8-curl php8-dba php8-intl php8-mbstring php8-zip
 
 Para instalar paquetes, podemos hacer uso del comando `zypper`
 
-```sh
-zypper install <PACKAGE>
-zypper in <PACKAGE>
-```
 
-Para actualizar paquetes
-
-```sh
-zypper patch # (1)
-
-zypper update # (2)
-zypper up
-```
-
-1.  Instalar solo los parches necesarios
-2.  Actualizar paquetes instalados
-
-
-Desinstalar paquetes
-
-```sh
-zypper remove <PACKAGE>
-zypper rm <PACKAGE>
-```
-
-Buscar un paquete
-
-```sh
-zypper search <PATTERN>
-zypper se <PATTERN>
-```
-
-Manejando repositorios
-
-```sh
-zypper repos, lr # (1)
-zypper addrepo, ar # (2)
-zypper removerepo, rr # (3)
-zypper modifyrepo, mr # (4)
-zypper refresh, ref # (5)
-zypper clean, cc # (6)
-```
-
-1.  Visualizar todos los repositorios definidos
-2.  Agregar un nuevo repositorio
-3.  Eliminar un repositorio
-4.  Modificar un repositorio
-5.  Actualizar todos los repositorio
-6.  Limpiar cache local
-
-
+| Comando                             | Accion                                                   |
+| ----------------------------------- | -------------------------------------------------------- |
+| `zypper install/in <PACKAGE>`       | Instalar un paquete                                      |
+| `zypper update/up <PACKAGE>`        | Actualizar paquetes instalados                           |
+| `zypper patch <PACKAGE>`            | Actualizar parches/paquetes necesarios                   |
+| `zypper remove/rm <PACKAGE>`        | Remover un paquete                                       |
+| `zypper search/se <PATTERN>`        | Buscar coincidencias del 'patron' entre los repositorios |
+| `zypper search/se --installed-only` | Visualizar paquetes instalados                           |
+| `zypper info/if <PACKAGE>`          | Obtener informacion de un paquete                        |
+| `zypper packages/pa`                | Listar todos los paquetes disponibles (instalados y no)  |
+| `zypper repos/lr`                   | Visualizar todos los repositorios definidos              |
+| `zypper addrepo/ar`                 | Agregar un nuevo repositorio                             |
+| `zypper removerepo/rr`              | Eliminar un repositorio                                  |
+| `zypper modifyrepo/mr`              | Modificar un repositorio                                 |
+| `zypper refresh/ref`                | Actualizar todos los repositorios                        |
+| `zypper clean/cc`                   | Limpiar cache local                                      |

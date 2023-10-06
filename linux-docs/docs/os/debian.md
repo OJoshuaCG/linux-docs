@@ -125,7 +125,7 @@ sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 ```
 
-Se crea el **repositorio deb**, _puede modificarse la version
+Se crea el **repositorio deb**, _puede modificarse la version_
 
 ```sh
 NODE_MAJOR=18
@@ -141,18 +141,14 @@ sudo apt-get install nodejs -y
 
 ### python
 
-Instalar dependencias para python
+El metodo de instalacion, sera por compilacion del paquete. Primero instalaremos las dependencias para la compilacion de Python
 
 ```sh
 sudo apt install software-properties-common -y
 sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev curl libbz2-dev -y
 ```
 
-https://weblinus.com/instalar-python-3-11-1-en-debian-11-y-derivados/
-https://serverspace.io/es/support/help/debian-install-python/
-
-
-Descargar un paquete `.tgz` del [repositorio de python](https://www.python.org/ftp/python) y lo descomprimimos
+Descargamos un paquete `.tgz` del [repositorio de python](https://www.python.org/ftp/python) y lo descomprimimos
 
 ```sh
 wget https://www.python.org/ftp/python/3.11.6/Python-3.11.6.tgz
@@ -218,23 +214,26 @@ Usar `sudo apt install <package> <package> ...`
 ---
 ## Gestor de paquetes `apt`
 
+En debian, existio primero `apt-get`, tiempo despues, crearon `apt`, el cual tiene la misma funcion que `apt-get`, junto con comandos muy similares.
+
 | Comando                       | Accion                                                               |
 | ----------------------------- | -------------------------------------------------------------------- |
-| `apt install <PACKAGE>`       | Instalar paquete                                                     |
-| `apt reinstall <PACKAGE>`     | Reinstalar paquete                                                   |
+| `apt install <PACKAGE>`       | Instalar un paquete                                                  |
+| `apt reinstall <PACKAGE>`     | Reinstalar un paquete                                                |
 | `apt update`                  | Actualiza lista de los paquetes disponibles                          |
 | `apt upgrade`                 | Actualiza el sistema instalando/actualizando los paquetes            |
 | `apt full-upgrade`            | Actualiza el sistema removiendo/instalando/actualizando los paquetes |
 | `apt remove <PACKAGE>`        | Desinstala/elimina un paquete                                        |
 | `apt autoremove`              | Desinstala/elimina paquetes no usados/innecesarios                   |
 | `apt search <PATTERN>`        | Busca el 'patron' en el nombre/descripcion de los paquetes           |
-| `apt show <PACKEGE>`          | Muestra los detalles deL paquete instalado                           |
+| `apt show <PACKEGE>`          | Muestra los detalles del paquete instalado                           |
+| `apt-cache pkgnames`          | Ver paquetes instalados en el sistema                                |
 | `apt-cache search <PATTERN>`  | Busca el 'patron' en el nombre de los paquetes                       |
 | `apt-cache madison <PACKAGE>` | Obtener los detalles (version, repositorio) de un paquete            |
-| `apt-cache pkgnames`          | Ver paquetes instalados en el sistema                                |
+| `apt clean`                   | Limpiar cache del apt                                                |
 
 
-
+---
 ## _Fuentes_
 
 - [Top 12 cosas que hacer despues de la instalación Debian 11](https://www.linuxtechi.com/things-to-do-after-installing-debian-11/)

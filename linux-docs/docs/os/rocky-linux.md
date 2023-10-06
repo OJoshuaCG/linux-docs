@@ -73,37 +73,21 @@ dnf install php php-cli php-curl php-dba php-intl php-json php-mbstring php-zip 
 
 Rocky Linux cuenta con su propio de gestor de paquetes llamado `dnf`, sin embargo, al estar basado en CentOS, es posible utilizar su gestor de paquetes `yum`.
 
-```sh
-dnf install <PACKAGE>
-dnf reinstall <PACKAGE>
-
-dnf update # (1)
-dnf upgrade # (2)
-dnf upgrade-minimal # (3)
-
-dnf list --installed
-dnf list --updates
-dnf list --upgrades
-dnf list --upgrades
-
-dnf repolist # (4)
-
-dnf search <PATTERN> # (5)
-
-dnf remove <PACKAGE>
-dnf autoremove <PACKAGE> # (6)
-
-dnf clean {metadata, packages, dbcache, expire-cache, all} # (7)
-```
-
-1.  Actualizar todos los paquetes
-2.  `upgrade` es un alias de `update`, por lo cual, realiza la misma accion que `update`
-3.  Actualiza solo los paquetes necesario que pueden afectar el sistema.
-4.  Mostrar repositorios permitidos
-5.  Buscar un paquete en los repositorios
-6.  Remover paquetes y dependencias
-7.  Eliminar cache del `dnf`
-
+| Comando                                                      | Accion                                     |
+| ------------------------------------------------------------ | ------------------------------------------ |
+| `dnf install <PACKAGE>`                                      | Instalar un paquete                        |
+| `dnf reinstall <PACKAGE>`                                    | Reinstalar un paquete                      |
+| `dnf update`                                                 | Actualizar todos los paquetes              |
+| `dnf upgrade`                                                | Alias de `update`, realiza la misma accion |
+| `dnf upgrade-minimal`                                        | Actualiza solo los paquetes necesarios     |
+| `dnf remove <PACKAGE>`                                       | Remover un paquete                         |
+| `dnf autoremove <PACKAGE>`                                   | Remover un paquete y sus dependencias      |
+| `dnf search <PATTERN>`                                       | Buscar un paquete en los repositorios      |
+| `dnf list --installed`                                       | Mostar paquetes instalados                 |
+| `dnf list --updates`                                         | Mostrar paquetes para actualizar           |
+| `dnf list --upgrades`                                        | Mostrar paquetes para actualizar           |
+| `dnf repolist`                                               | Mostrar repositorios permitidos            |
+| `dnf clean {metadata, packages, dbcache, expire-cache, all}` | Elimina cache del `dnf`                    |
 
 
 
