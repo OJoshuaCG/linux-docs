@@ -60,6 +60,7 @@ Las ventanas son como pestañas en un navegador, ocupan el espacio de la pantall
 | ++ctrl+b++   ++single-quote++ | Seleccionar la ventana por su nombre |
 | ++ctrl+b++   ++period++       | Cambiar el numero de la ventana      |
 | ++ctrl+b++   ++comma++        | Renombrar la ventana                 |
+| ++ctrl+b++   ++w++            | Listar ventanas                      |
 | ++ctrl+b++   ++f++            | Buscar una ventana                   |
 | ++ctrl+b++   ++"&"++          | Cerrar/eliminar ventana              |
 
@@ -69,28 +70,31 @@ Las ventanas son como pestañas en un navegador, ocupan el espacio de la pantall
 
 Los paneles son secciones de las ventanas que dividen la pantalla.
 
-| Atajo                              | Accion                                   |
-| ---------------------------------- | ---------------------------------------- |
-| ++ctrl+b++   ++"%"++               | Dividir en vertical                      |
-| ++ctrl+b++   ++double-quote++      | Dividir en horizontal                    |
-| ++ctrl+b++   ++o++                 | Ir al siguiente panel                    |
-| ++ctrl+b++   ++semicolon++         | Ir al ultimo panel activo                |
-| ++ctrl+b++   ++close-brace++       | Ir al panel de la derecha                |
-| ++ctrl+b++   ++open-brace++        | Ir al panel de la izquierda              |
-| ++ctrl+b++   ++q++                 | Mostrar numero del panel                 |
-| ++ctrl+b++   ++q++ ++0++ ... ++9++ | Mostrar numero del panel y seleccionarlo |
-| ++ctrl+b++   ++z++                 | Enfocar el panel en la ventana           |
-| ++ctrl+b++   ++exclam++            | Convertir panel en ventana               |
-| ++ctrl+b++   ++right++             | Mover panel a la derecha                 |
-| ++ctrl+b++   ++left++              | Mover panel a la izquierda               |
-| ++ctrl+b++   ++up++                | Mover panel hacia arriba                 |
-| ++ctrl+b++   ++down++              | Mover panel hacia abajo                  |
-| ++ctrl+b++   ++space++             | Cambiar vista de los paneles             |
-| ++ctrl+b+up++                      | Cambiar el tamaño de la altura del panel |
-| ++ctrl+b+down++                    | Cambiar el tamaño de la altura del panel |
-| ++ctrl+b+right++                   | Cambiar el tamaño del ancho del panel    |
-| ++ctrl+b+left++                    | Cambiar el tamaño del ancho del panel    |
-| ++ctrl+b++   ++x++                 | Cerrar/eliminar panel                    |
+| Atajo                              | Accion                                    |
+| ---------------------------------- | ----------------------------------------- |
+| ++ctrl+b++   ++"%"++               | Dividir en vertical                       |
+| ++ctrl+b++   ++double-quote++      | Dividir en horizontal                     |
+| ++ctrl+b++   ++o++                 | Ir al siguiente panel                     |
+| ++ctrl+b++   ++semicolon++         | Ir al ultimo panel activo                 |
+| ++ctrl+b++   ++close-brace++       | Ir al panel de la derecha                 |
+| ++ctrl+b++   ++open-brace++        | Ir al panel de la izquierda               |
+| ++ctrl+b++   ++q++                 | Mostrar numero del panel                  |
+| ++ctrl+b++   ++q++ ++0++ ... ++9++ | Mostrar numero del panel y seleccionarlo  |
+| ++ctrl+b++   ++z++                 | Panel en pantalla completa de la terminal |
+| ++ctrl+b++   ++exclam++            | Convertir panel en ventana                |
+| ++ctrl+b++   ++'<ARROW>'++         | Mover panel hacia un lado                 |
+| ++ctrl+b++   ++space++             | Cambiar vista de los paneles              |
+| ++ctrl+b+'<ARROW>'++               | Cambiar tamaño del panel                  |
+| ++ctrl+b++   ++x++                 | Cerrar/eliminar panel                     |
 
 
 ++ctrl+b++ ++question++ para ver la lista de comandos.
+
+<!--
+https://facelessuser.github.io/pymdown-extensions/extensions/keys/
+-->
+
+## Fuentes
+
+- https://tmuxcheatsheet.com/
+- https://www.pluralsight.com/resources/blog/cloud/tmux-cheat-sheet
