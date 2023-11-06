@@ -27,8 +27,8 @@ nav:
   - SSH:
       - Servidor: ssh/server.md
       - Cliente: ssh/client.md
-  # - Firewall:
-  #     - ip-tables: firewall/ip-tables.md
+  - Firewall:
+      - ip-tables: firewall/ip-tables.md
   #     - firewalld: firewall/firewalld.md
   #     - ufw: firewall/ufw.md
   #     - csf: firewall/csf.md
