@@ -78,26 +78,26 @@ sudo nano /etc/ssh/sshd_config
 
 Alguna configuracion extra que se puede configurar es la siguiente (todo en base del archivo `/etc/ssh/sshd_config`)
 
-| Parametro                         | Valores          | Utilidad                                                        |
-| --------------------------------- | ---------------- | --------------------------------------------------------------- |
-| `AuthorizedKeysFile`              | `/path/filename` | Archivo que contiene las claves publicas                        |
-| `Banner`                          | `/path/filename` | Archivo para mostrar como pantalla de presentacion              |
-| `ChallengeResponseAuthentication` | `yes`, `no`      | Permite la autentificacion a través de PAM                      |
-| `HostKey`                         | `/path/filename` | Archivos donde se guardan las Keys                              |
-| `ListenAddress`                   | `Hosts`          | Direcciones IP que tienen permitido conectarse                  |
-| `LoginGraceTime`                  | `number`         | Tiempo maximo de espera para ingresar una contraseña            |
-| `MaxAuthTries`                    | `number`         | Maximo numero de intentos para ingresar la contraseña           |
-| `MaxSessions`                     | `number`         | Sesiones abiertas de Shell                                      |
-| `MaxStartups`                     | `number`         | Sesiones maximas por IP/Host                                    |
-| `PasswordAuthentication`          | `yes`, `no`      | Ingresar via ssh con una contraseña de usuario                  |
-| `PermitEmptyPasswords`            | `yes`, `no`      | Aprobar contraseñas vacias                                      |
-| `PermitRootLogin`                 | `yes`, `no`      | Ingresar con el usuario root                                    |
-| `PubkeyAuthentication`            | `yes`, `no`      | Permite la autentificacion por clave publica                    |
-| `UsePrivilegeSeparation`          | `yes`, `no`      | Separa privilegios por medio de un proceso hijo sin privilegios |
+| Parametro                         | Valores      | Utilidad                                                        |
+| --------------------------------- | ------------ | --------------------------------------------------------------- |
+| `AuthorizedKeysFile`              | `/path/file` | Archivo que contiene las claves publicas                        |
+| `Banner`                          | `/path/file` | Archivo para mostrar como pantalla de presentacion              |
+| `ChallengeResponseAuthentication` | `yes`, `no`  | Permite la autentificacion a través de PAM                      |
+| `HostKey`                         | `/path/file` | Archivos donde se guardan las Keys                              |
+| `ListenAddress`                   | `hosts`      | Direcciones IP que tienen permitido conectarse                  |
+| `LoginGraceTime`                  | `number`     | Tiempo maximo de espera para ingresar una contraseña            |
+| `MaxAuthTries`                    | `number`     | Maximo numero de intentos para ingresar la contraseña           |
+| `MaxSessions`                     | `number`     | Sesiones abiertas de Shell                                      |
+| `MaxStartups`                     | `number`     | Sesiones maximas por IP/Host                                    |
+| `PasswordAuthentication`          | `yes`, `no`  | Ingresar via ssh con una contraseña de usuario                  |
+| `PermitEmptyPasswords`            | `yes`, `no`  | Aprobar contraseñas vacias                                      |
+| `PermitRootLogin`                 | `yes`, `no`  | Ingresar con el usuario root                                    |
+| `PubkeyAuthentication`            | `yes`, `no`  | Permite la autentificacion por clave publica                    |
+| `UsePrivilegeSeparation`          | `yes`, `no`  | Separa privilegios por medio de un proceso hijo sin privilegios |
 
 
 
-```conf
+```sh
 # /etc/ssh/sshd_config
 Port 22
 PermitRootLogin yes
@@ -117,10 +117,10 @@ ChallengeResponseAuthentication no
 ---
 ## Clave publica
 
-Para agregar una clave publica en nuestro servidor basta con copiar el archivo `.pub`
+Para agregar una clave publica en nuestro servidor basta con copiar el archivo `.pub` que se encuentra en nuestro equipo local
 
 ```sh
-ssh-copy-id -i ~/.ssh/id_rsa.pub root@192.0.2.123
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
 ```
 
 

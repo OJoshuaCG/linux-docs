@@ -9,7 +9,7 @@ ssh user@host
 ssh admin@192.168.122.122
 ```
 
-Por defecto, se intentara ingresar a traves del puerto `22`, si se desea especificar otro, debe usarse el flag -p
+Por defecto, se intentara ingresar a traves del puerto `22`, si se desea especificar otro, debe usarse el flag `-p`
 
 ```sh
 ssh user@host -p 23
@@ -18,7 +18,7 @@ ssh user@host -p 23
 Si se tiene un archivo `.pem` se debera hacer uso del flag `-i`
 
 ```sh
-ssh -i /path/of/pem/file user@host
+ssh -i /path/pem_file user@host
 ```
 
 
@@ -74,6 +74,7 @@ ssh user@host << EOF
 hostname
 date
 echo "Hola mundo!" > /tmp/archivo.txt
+EOF
 ```
 
 
@@ -89,7 +90,7 @@ ssh -2 user@host
 ```
 
 
-`-4`, `-6`, conectarnos a un host por IPv6 o IPv4
+`-4`, `-6`, conectarnos a un host por IPv4 o IPv6
 
 ```sh
 ssh -4 user@host
