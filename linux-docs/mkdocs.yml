@@ -26,7 +26,7 @@ nav:
   #     - kde: desktop-environments/kde.md
   - SSH:
       - Servidor: ssh/server.md
-      # - Cliente: ssh/client.md
+      - Cliente: ssh/client.md
   # - Firewall:
   #     - ip-tables: firewall/ip-tables.md
   #     - firewalld: firewall/firewalld.md
