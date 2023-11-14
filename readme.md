@@ -11,7 +11,7 @@ Aprenderas los primeros pasos en los SO de Linux, como:
 
 Tambien conoceras la diferencia entre "Shell" y "Terminal".
 
-Por ultimo, veremos como personalizar entornos de escritorio (Desktop Environments), firewalls y Qemu, un software para virtualizar.
+Por ultimo, veremos como utilizar Qemu, un software para virtualizar, y conceptos basicos del cortafuegos "ip-tables".
 
 Puedes ingresar al siguiente enlace para visualizar la documentacion:
 
@@ -21,9 +21,9 @@ Puedes ingresar al siguiente enlace para visualizar la documentacion:
 ---
 ## Clonar repositorio
 
-Puedes clonar el repositorio, crear su entorno virtual e instalar sus dependencias:
+Puedes clonar el repositorio, crear tu entorno virtual e instalar sus dependencias:
 
-``` 
+```
 git clone https://github.com/OJoshuaCG/linux-docs.git
 cd linux-docs
 python -m venv venv
