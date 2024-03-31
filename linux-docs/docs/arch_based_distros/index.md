@@ -46,7 +46,12 @@ sudo debtap -u
 sudo pacman -S <PACKAGE_NAME>
 ```
 
-### Con `makepkg`
+### Paquete `.tar.xz`
+```sh
+sudo pacman -U package.pkg.tar.xz
+```
+
+### Paquete clonado de AUR o con archivo `PKGBUILD`
 ```sh
 git clone <URL_REPOSITORY>
 cd <FOLDER>
@@ -68,6 +73,52 @@ sudo pacman -U <PACKAGE_NAME>.pkg.tar.zst
 # Generando PKGBUILD (opcional)
 debtap -P <FILENAME>.deb
 ```
+
+
+---
+
+## Desinstalar paquetes
+
+```sh
+sudo pacman -R <PACKAGE_NAME>
+
+# Eliminar paquetes y dependencias
+sudo pacman -Rn <PACKAGE_NAME>
+
+# Eliminar paquetes, dependencias y demas paquetes que dependen de esas dependencias
+sudo pacman -Rsc <PACKAGE_NAME>
+```
+
+
+---
+
+## Busqueda de/en paquetes
+
+Se pueden realizar distintos formatos de busqueda, como por ejemplo
+
+```sh
+pacman -Ss <STRING> # (1)
+pacman -Ss '^vim-'
+
+# Buscar paquetes instalados
+pacman -Qs <PACKAGE_NAME>
+
+# Conocer informacion de un paquete
+pacman -Si <PACKAGE_NAME>
+
+# Conocer informacion de un paquete instalado
+pacman -Qi <PACKAGE_NAME>
+
+# Obtener lista de los archivos instalados por un paquete
+pacman -Ql <PACKAGE_NAME>
+
+# Buscar un paquete que contenga un archivo
+pacman -Fy # (2)
+pacman -Fs <FILENAME>
+```
+
+1. Tomar en cuenta que la busqueda es de tipo `regex`
+2. Actualizar base de datos
 
 
 ---

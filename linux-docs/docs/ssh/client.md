@@ -26,7 +26,7 @@ ssh -i /path/pem_file user@host
 
 ## Clave publica
 
-Dentro de nuestro equipo donde deseamos ingresar al servidor, vamos a crear una clave a traves del siguiente comando
+Dentro de nuestro equipo donde deseamos ingresar al servidor, vamos a crear una clave a traves del siguiente comando dentro del directorio `~/.ssh`
 
 ```sh
 ssh-keygen -t rsa
@@ -36,6 +36,43 @@ Esto nos generara una clave en `~/.ssh/` con el nombre `id_rsa.pub` el cual podr
 
 ```sh
 ssh-copy-id user@host
+```
+
+### Clave publica personalizada
+
+Ademas de esta clave podemos crear una personalizada con otro nombre distinto a `id_rsa.pub`, especificandolo al generarla:
+_Recordar encontrarnos en el directorio `~/.ssh`
+
+```sh
+ssh-keygen -t rsa
+> Enter file in which to save the key (/root/.ssh/id_rsa): ~/.ssh/Office_Key
+
+> Enter passphrase (empty for no passphrase):
+> Enter same passphrase again:
+
+> Your identification has been saved in Office_Key.
+> Your public key has been saved in Office_Key.pub.
+```
+
+Para poder especificar el servidor donde deseamos ingresar con esta clave, debemos crear un archivo de configuracion dentro de `~/.ssh`
+
+```sh
+nano ~/.ssh/config
+
+  Host ALIAS
+    HostName dominio.com
+    IdentityFile ~/.ssh/KEY_NAME
+    User root
+
+  # Ejemplo
+  # Si el alias es personalizado, el clone quedaria asi
+  # git@office:USER/repository.git
+  Host github.com
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/Office_Key
+    IdentitiesOnly yes
+    # Port 22
 ```
 
 
