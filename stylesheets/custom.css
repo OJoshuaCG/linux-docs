@@ -1,0 +1,45 @@
+
+:root {
+  --primary: #46bc99;
+  /* --secondary: #bc4669; */
+  --secondary: ##ffb536;
+  /* fca326 */
+
+  /* --primary-light: #007f57;
+  --primary-soft-light: #0bad84;
+  --primary-dark: #46bc99;
+  --primary-soft-dark: #b1e2d2; */
+
+  /* --secondary-light: #a64162;
+  --secondary-soft-light: #da7297;
+  --secondary-dark: #da7297;
+  --secondary-soft-dark: #eebfd1; */
+
+  /* --secondary-light: #fc932f;
+  --secondary-soft-light: #ffb536;
+  --secondary-dark: #ffb536;
+  --secondary-soft-dark: #ffd669; */
+
+  --secondary-light: #f78802;
+  --secondary-soft-light: #fca326;
+  --secondary-dark: #fca326;
+  --secondary-soft-dark: #fdc97f;
+
+  --third: #fdca30;
+  --forth: #f79400;
+
+  /* ------------------ */
+  --md-primary-fg-color: var(--primary);
+}
+
+:root > * {
+  --md-typeset-a-color: var(--secondary-light);
+  --md-accent-fg-color: var(--secondary-soft-light);
+}
+
+@media screen{
+  [data-md-color-scheme=slate][data-md-color-primary=custom]{
+    --md-typeset-a-color: var(--secondary-dark);
+    --md-accent-fg-color: var(--secondary-soft-dark);
+  }
+}
